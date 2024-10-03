@@ -1,0 +1,116 @@
+$form-border-radius: 5px;
+$input-padding: 12px;
+$input-border-radius: 5px;
+$input-border: 1px solid #d1cfcf;
+$input-background: #ededed;
+$button-background: #19bab2;
+$button-color: #fff;
+$error-color: #ff0000;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 1.125rem;
+  margin-top: 1.25rem;
+
+  @media screen and (max-width: 1024px) {
+    gap: 2vw;
+  }
+  @media screen and (max-width: 480px) {
+    margin-top: 0;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .field {
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 480px) {
+      margin-bottom: 0;
+    }
+
+    input {
+      padding: $input-padding;
+      border: $input-border;
+      border-radius: $input-border-radius;
+      background-color: $input-background;
+
+      @media screen and (max-width: 480px) {
+        padding: 0.5rem;
+        width: 20vw;
+      }
+    }
+
+    input[id="category"] {
+      width: 8vw;
+      @media screen and (max-width: 480px) {
+        width: 25vw;
+      }
+    }
+
+    small {
+      display: block;
+      margin-top: 0.3125rem;
+      color: $error-color;
+    }
+  }
+
+  .colorAndBtnContainer {
+    display: flex;
+    gap: 1vw;
+    @media screen and (max-width: 480px) {
+      gap: 3vw;
+    }
+
+    .dropdownContainer {
+      flex-direction: column;
+      display: flex;
+      align-items: flex-start;
+
+      small {
+        color: $error-color;
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    .btnField {
+      display: flex;
+      align-items: center;
+
+      .submitBtn {
+        font-size: 1rem;
+        padding: 0.85rem 1.5rem;
+        background-color: $button-background;
+        color: $button-color;
+        border: none;
+        border-radius: $input-border-radius;
+        cursor: pointer;
+        @media screen and (max-width: 480px) {
+          padding: 0.55rem 0.7rem;
+        }
+
+        &:hover {
+          background-color: darken($button-background, 10%);
+        }
+      }
+    }
+  }
+}
+
+label[id="categoryLabel"] {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  label[id="categoryLabel"] {
+    display: block;
+    margin-bottom: 0.3125rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+}
