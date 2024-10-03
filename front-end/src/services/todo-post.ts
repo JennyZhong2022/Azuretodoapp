@@ -1,7 +1,10 @@
 import { CategoryFormData } from "../components/CategoryForm/schema";
 import { ToDoPostFormData } from "../components/ToDoPostForm/schema";
 
-const baseURL = import.meta.env.VITE_APP_API_BASE_URL;
+// const baseURL = import.meta.env.VITE_APP_API_BASE_URL;
+
+const baseURL =
+  "https://azuretodolist-fedyatbkb3che9gr.australiasoutheast-01.azurewebsites.net";
 
 export interface ToDoPostResponse {
   id: number;
